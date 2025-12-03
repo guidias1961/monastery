@@ -131,21 +131,32 @@
         }
         @keyframes blinker { 50% { opacity: 0; } }
 
-        /* PFP MAKER ESTÚPIDO */
+        /* PFP MAKER ESTÚPIDO ATUALIZADO */
         .pfp-maker-zone {
             background-color: cyan;
             padding: 20px;
             border: 5px groove red;
         }
 
-        .pfp-canvas {
+        .pfp-canvas-container {
             position: relative;
             width: 300px;
             height: 300px;
             margin: 0 auto;
-            background-color: white;
             border: 3px solid black;
+            background-color: white;
+        }
+
+        /* Onde as imagens ficam */
+        .pfp-images-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            z-index: 1;
+            pointer-events: none; /* Deixa o mouse passar para o canvas de desenho */
         }
 
         #base-body {
@@ -153,16 +164,26 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            z-index: 1;
+            z-index: 2;
         }
 
         #active-head {
             position: absolute;
-            /* AJUSTE ESTES VALORES dependendo de onde o pescoço está na sua imagem 1.png */
             top: 20px; 
             left: 50px; 
-            width: 200px; /* Tamanho da cabeça */
-            z-index: 2;
+            width: 200px;
+            z-index: 3;
+        }
+
+        /* O Canvas de Assinatura */
+        #signature-canvas {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            border: 2px dashed red;
+            z-index: 10; /* Fica por cima de tudo */
+            cursor: crosshair;
+            background-color: transparent; /* Transparente para ver o desenho embaixo */
         }
 
         .head-selector {
@@ -171,6 +192,10 @@
             gap: 10px;
             margin-top: 20px;
             flex-wrap: wrap;
+            max-height: 200px;
+            overflow-y: auto; /* Barra de rolagem se tiver muitas cabeças */
+            border: 2px inset gray;
+            padding: 5px;
         }
 
         .head-thumb {
@@ -179,6 +204,7 @@
             border: 3px solid blue;
             cursor: pointer;
             background-color: var(--eye-bleed-yellow);
+            object-fit: contain;
         }
         .head-thumb:hover {
             border-color: red;
@@ -289,22 +315,21 @@
 
         <section class="pfp-maker-zone">
             <h3>CREATE UR DUMB PFP</h3>
-            <p>Click head to put on body. Very tech. Wow.</p>
+            <p>1. Click head. 2. Sign ur name in the red box (use mouse, very paint style).</p>
             
-            <div class="pfp-canvas">
-                <img id="active-head" src="2.png" alt="Head">
-                <img id="base-body" src="1.png" alt="Body">
+            <div class="pfp-canvas-container">
+                <div class="pfp-images-layer">
+                    <img id="active-head" src="2.png" alt="Head">
+                    <img id="base-body" src="1.png" alt="Body">
+                </div>
+                <canvas id="signature-canvas" width="100" height="50"></canvas>
             </div>
 
-            <div class="head-selector">
-                <img class="head-thumb" src="2.png" onclick="changeHead('2.png')">
-                <img class="head-thumb" src="3.png" onclick="changeHead('3.png')">
-                <img class="head-thumb" src="4.png" onclick="changeHead('4.png')">
-                <img class="head-thumb" src="5.png" onclick="changeHead('5.png')">
-                <img class="head-thumb" src="6.png" onclick="changeHead('6.png')">
-            </div>
+            <div class="head-selector" id="headSelectorContainer">
+                </div>
+            
             <br>
-            <button onclick="alert('Right click and save it u lazy monk. We spent budget on crayons.')" style="font-family: Comic Sans MS; padding: 10px; background: yellow; border: 3px solid black; cursor: pointer;">DOWNLOAD MY MASTERPIECE</button>
+            <p style="font-size: 0.8em;">(To save: Windows key + Shift + S. We too low IQ to make download button work with canvas.)</p>
         </section>
 
         <div class="button-zone">
@@ -327,28 +352,90 @@
     </footer>
 
     <script>
-        // SCRIPT DA TELA DE CARREGAMENTO
+        // =========================================
+        // CONFIGURAÇÃO DAS CABEÇAS INFINITAS
+        // =========================================
+        // ADICIONE SUAS NOVAS IMAGENS NESSA LISTA AQUI EMBAIXO.
+        // Exemplo: para adicionar a imagem 7.png e 8.png, a lista ficaria:
+        // const availableHeads = ['2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'];
+        
+        const availableHeads = [
+            '2.png', 
+            '3.png', 
+            '4.png', 
+            '5.png', 
+            '6.png'
+            // ADICIONE MAIS AQUI... '7.png', '8.png', etc.
+        ];
+
+        // Função que gera os botões das cabeças dinamicamente
+        const selectorContainer = document.getElementById('headSelectorContainer');
+        availableHeads.forEach(headFilename => {
+            let img = document.createElement('img');
+            img.src = headFilename;
+            img.classList.add('head-thumb');
+            img.onclick = function() {
+                 document.getElementById('active-head').src = headFilename;
+            };
+            selectorContainer.appendChild(img);
+        });
+
+
+        // =========================================
+        // SCRIPT DO CANVAS DE ASSINATURA (ESTILO PAINT)
+        // =========================================
+        const canvas = document.getElementById('signature-canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        // Estilo da "caneta" do Paint
+        ctx.lineWidth = 4; // Grosso e tosco
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#ff0000'; // Vermelho sangue tosco
+
+        function draw(e) {
+            if (!isDrawing) return; // stop the fn from running when they are not moused down
+            
+            // Get mouse position relative to canvas
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            [lastX, lastY] = [x, y];
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            [lastX, lastY] = [e.clientX - rect.left, e.clientY - rect.top];
+        });
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+
+
+        // =========================================
+        // SCRIPTS GERAIS (LOADING E CONTADOR)
+        // =========================================
         let loadText = document.getElementById('load-text');
         let percentage = 0;
         let loadInterval = setInterval(() => {
             percentage += Math.floor(Math.random() * 15);
-            if (percentage > 140) percentage = 2; // Reset estúpido
+            if (percentage > 140) percentage = 2; 
             loadText.innerText = percentage + "% brain used...";
         }, 200);
 
         setTimeout(() => {
             clearInterval(loadInterval);
             document.getElementById('loading-screen').style.display = 'none';
-            // Toca um som horrível se o navegador deixar (opcional)
-            // new Audio('https://www.myinstants.com/media/sounds/erro.mp3').play();
-        }, 3500); // Espera 3.5 segundos
+        }, 3500); 
 
-        // SCRIPT DO PFP MAKER
-        function changeHead(filename) {
-            document.getElementById('active-head').src = filename;
-        }
-
-        // CONTADOR DE VISITAS FALSO
         let count = 1284;
         setInterval(() => {
             count += Math.floor(Math.random() * 10);
