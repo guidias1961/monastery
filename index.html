@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONASTERY OF $TERY - NO BRAIN ONLY GAIN</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        /* ESTILO GERAL - O mais horrível possível */
+        :root {
+            --neon-green: #00ff00;
+            --pain-purple: #8000ff;
+            --eye-bleed-yellow: #ffff00;
+            --comic-sans: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--neon-green);
+            font-family: var(--comic-sans);
+            color: blue;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM32 63c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm57-13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238000ff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewport="0 0 100 100" style="fill:black;font-size:24px;"><text y="50%">💩</text></svg>'), auto;
+        }
+
+        h1, h2, h3 {
+            text-shadow: 3px 3px 0px var(--eye-bleed-yellow), -3px -3px 0px red;
+            letter-spacing: -2px;
+        }
+
+        /* TELA DE CARREGAMENTO LOW IQ */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: yellow;
+        }
+
+        .spinner-stupid {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 10px dashed yellow;
+            animation: spin-badly 1s infinite linear;
+        }
+
+        @keyframes spin-badly {
+            0% { transform: rotate(0deg) skewX(0deg); }
+            50% { transform: rotate(180deg) skewX(20deg); }
+            100% { transform: rotate(360deg) skewX(0deg); }
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 5px dotted var(--pain-purple);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .marquee-container {
+            background-color: var(--eye-bleed-yellow);
+            border-bottom: 5px solid red;
+            padding: 5px;
+        }
+        marquee {
+            font-size: 2em;
+            font-weight: bold;
+            color: red;
+        }
+
+        /* ÁREA DO VÍDEO SAGRADO */
+        .holy-video-shrine {
+            margin: 30px 0;
+            border: 10px ridge gold;
+            padding: 10px;
+            background: repeating-linear-gradient(
+              45deg,
+              #8000ff,
+              #8000ff 10px,
+              #00ff00 10px,
+              #00ff00 20px
+            );
+            animation: vibrate 0.5s infinite;
+        }
+
+        video {
+            width: 100%;
+            max-width: 500px;
+            border: 5px solid red;
+            box-shadow: 0 0 20px var(--eye-bleed-yellow);
+        }
+
+        @keyframes vibrate {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* MANIFESTO DO CULTO */
+        .manifesto {
+            background-color: var(--pain-purple);
+            color: var(--eye-bleed-yellow);
+            padding: 20px;
+            border: 5px dashed black;
+            font-size: 1.2em;
+            transform: rotate(-2deg);
+            margin: 30px 0;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+            color: red;
+            font-weight: bold;
+        }
+        @keyframes blinker { 50% { opacity: 0; } }
+
+        /* PFP MAKER ESTÚPIDO */
+        .pfp-maker-zone {
+            background-color: cyan;
+            padding: 20px;
+            border: 5px groove red;
+        }
+
+        .pfp-canvas {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: white;
+            border: 3px solid black;
+            overflow: hidden;
+        }
+
+        #base-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #active-head {
+            position: absolute;
+            /* AJUSTE ESTES VALORES dependendo de onde o pescoço está na sua imagem 1.png */
+            top: 20px; 
+            left: 50px; 
+            width: 200px; /* Tamanho da cabeça */
+            z-index: 2;
+        }
+
+        .head-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .head-thumb {
+            width: 60px;
+            height: 60px;
+            border: 3px solid blue;
+            cursor: pointer;
+            background-color: var(--eye-bleed-yellow);
+        }
+        .head-thumb:hover {
+            border-color: red;
+            transform: scale(1.2);
+        }
+
+        /* BOTÕES */
+        .button-zone {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .mega-button {
+            padding: 20px 40px;
+            font-size: 2em;
+            font-family: var(--comic-sans);
+            border: 10px outset;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .buy-btn {
+            background-color: red;
+            color: yellow;
+            border-color: orange;
+            animation: pulse 1s infinite;
+        }
+
+        .twitter-btn {
+            background-color: #1DA1F2;
+            color: white;
+            border-color: blue;
+        }
+
+        @keyframes pulse {
+             0% { transform: scale(1); }
+             50% { transform: scale(1.1); box-shadow: 0 0 30px red;}
+             100% { transform: scale(1); }
+        }
+
+        /* RODAPÉ */
+        footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: red;
+            background-color: black;
+            padding: 10px;
+        }
+        #visitor-count {
+            font-family: 'Courier New', Courier, monospace;
+            background: white;
+            border: 2px inset gray;
+            padding: 2px 5px;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="loading-screen">
+        <div class="spinner-stupid"></div>
+        <h1>LOADING IGNORANCE...</h1>
+        <h2 id="load-text">0% brain used</h2>
+    </div>
+
+    <div class="marquee-container">
+        <marquee scrollamount="15" direction="left">
+            WELCOME TO THE MONASTERY OF $TERY +++ WHERE SMART PPL GO TO DIE +++ WE MAKE MONEY BY ACCIDENT +++ PRAISE THE LOW IQ ABBOT +++ BUY NOW THINK NEVER
+        </marquee>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Our Glorious Leader" width="150" style="border: 5px dotted red; transform: rotate(5deg);">
+            <h1>THE SACRED TEMPLE OF $TERY</h1>
+            <h2>CULT OF PROFITABLE IGNORANCE</h2>
+        </header>
+
+        <hr style="border: 5px dashed blue;">
+
+        <section class="holy-video-shrine">
+            <h3>WITNESS THE MIRACLE OF GAINZ</h3>
+            <p>Look at him go! He has no idea what he is doing!</p>
+            <video autoplay loop muted playsinline>
+                <source src="1.mp4" type="video/mp4">
+                Your browser is too smart for this video.
+            </video>
+            <p class="blink">⚠️ WARNING: WATCHING MAY LOWER IQ ⚠️</p>
+        </section>
+
+        <section class="manifesto">
+            <h3>OUR HOLY DOCTRINE:</h3>
+            <ul>
+                <li>WE DON'T READ WHITE PAPERS. WE EAT THEM.</li>
+                <li>THINKING IS FUD.</li>
+                <li>IF U DON'T UNDERSTAND IT, BUY IT.</li>
+                <li>SMOOTH BRAIN = LESS FRICTION FOR MONEY TO SLIDE IN.</li>
+            </ul>
+            <p>The Grand Abbot says: "Durrrrrrrrrrr... Monad? Yes."</p>
+        </section>
+
+        <section class="pfp-maker-zone">
+            <h3>CREATE UR DUMB PFP</h3>
+            <p>Click head to put on body. Very tech. Wow.</p>
+            
+            <div class="pfp-canvas">
+                <img id="active-head" src="2.png" alt="Head">
+                <img id="base-body" src="1.png" alt="Body">
+            </div>
+
+            <div class="head-selector">
+                <img class="head-thumb" src="2.png" onclick="changeHead('2.png')">
+                <img class="head-thumb" src="3.png" onclick="changeHead('3.png')">
+                <img class="head-thumb" src="4.png" onclick="changeHead('4.png')">
+                <img class="head-thumb" src="5.png" onclick="changeHead('5.png')">
+                <img class="head-thumb" src="6.png" onclick="changeHead('6.png')">
+            </div>
+            <br>
+            <button onclick="alert('Right click and save it u lazy monk. We spent budget on crayons.')" style="font-family: Comic Sans MS; padding: 10px; background: yellow; border: 3px solid black; cursor: pointer;">DOWNLOAD MY MASTERPIECE</button>
+        </section>
+
+        <div class="button-zone">
+            <a href="https://nad-fun.gitbook.io/nad.fun" target="_blank" class="mega-button buy-btn">
+                💰 BUY $TERY NOW (nad.fun) 💰<br>
+                <small>don't think just click</small>
+            </a>
+            
+            <a href="https://twitter.com" target="_blank" class="mega-button twitter-btn">
+                🐦 JOIN THE BIRD CULT 🐦
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>COPYRIGHT 1995-2025 MONASTERY OF TERY. ALL RIGHTS RESERVED (WE THINK).</p>
+        <p>YOU ARE VISITOR NUMBER: <span id="visitor-count">00001</span> (wow famous)</p>
+        <img src="logo.png" width="30" style="filter: grayscale(100%);">
+    </footer>
+
+    <script>
+        // SCRIPT DA TELA DE CARREGAMENTO
+        let loadText = document.getElementById('load-text');
+        let percentage = 0;
+        let loadInterval = setInterval(() => {
+            percentage += Math.floor(Math.random() * 15);
+            if (percentage > 140) percentage = 2; // Reset estúpido
+            loadText.innerText = percentage + "% brain used...";
+        }, 200);
+
+        setTimeout(() => {
+            clearInterval(loadInterval);
+            document.getElementById('loading-screen').style.display = 'none';
+            // Toca um som horrível se o navegador deixar (opcional)
+            // new Audio('https://www.myinstants.com/media/sounds/erro.mp3').play();
+        }, 3500); // Espera 3.5 segundos
+
+        // SCRIPT DO PFP MAKER
+        function changeHead(filename) {
+            document.getElementById('active-head').src = filename;
+        }
+
+        // CONTADOR DE VISITAS FALSO
+        let count = 1284;
+        setInterval(() => {
+            count += Math.floor(Math.random() * 10);
+            document.getElementById('visitor-count').innerText = count.toString().padStart(5, '0');
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
