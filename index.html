@@ -18,20 +18,27 @@
         body {
             background-color: var(--neon-green);
             font-family: var(--comic-sans);
-            color: blue;
+            color: #0000cc; /* Azul um pouco mais escuro para ler melhor */
             text-align: center;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            /* Padrão de fundo */
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM32 63c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm57-13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238000ff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewport="0 0 100 100" style="fill:black;font-size:24px;"><text y="50%">💩</text></svg>'), auto;
         }
 
+        /* CORREÇÃO DAS FONTES DUPLICADAS AQUI */
         h1, h2, h3 {
-            text-shadow: 3px 3px 0px var(--eye-bleed-yellow), -3px -3px 0px red;
-            letter-spacing: -2px;
+            /* Removi o shadow duplo colorido e deixei um outline simples */
+            text-shadow: 2px 2px 0px #ffffff; 
+            letter-spacing: -1px;
             word-wrap: break-word;
+            margin: 10px 0;
         }
+
+        h1 { font-size: 2.5em; color: red; -webkit-text-stroke: 1px black; }
+        h2 { font-size: 1.5em; color: blue; }
 
         #loading-screen {
             position: fixed;
@@ -57,10 +64,12 @@
 
         .container {
             width: 90%; max-width: 800px;
-            margin: 20px auto; padding: 15px;
+            margin: 20px auto; padding: 20px;
             border: 5px dotted var(--pain-purple);
-            background-color: rgba(255, 255, 255, 0.5);
+            /* Aumentei a opacidade do fundo para facilitar a leitura */
+            background-color: rgba(255, 255, 255, 0.8);
             box-sizing: border-box;
+            box-shadow: 10px 10px 0px black;
         }
 
         .marquee-container {
@@ -68,7 +77,7 @@
             border-bottom: 5px solid red;
             padding: 5px;
         }
-        marquee { font-size: 1.5em; font-weight: bold; color: red; }
+        marquee { font-size: 1.5em; font-weight: bold; color: red; text-transform: uppercase; }
 
         header img { max-width: 80%; height: auto; }
 
@@ -100,7 +109,8 @@
             color: var(--eye-bleed-yellow);
             padding: 15px;
             border: 4px dashed black;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: bold;
             transform: rotate(-1deg);
             margin: 25px 0;
         }
@@ -115,7 +125,7 @@
         @keyframes blinker { 50% { opacity: 0; } }
 
         /* =========================================
-           PFP MAKERS (STANDARD & UPLOAD)
+           PFP MAKERS
         ========================================= */
         .pfp-maker-zone {
             background-color: cyan;
@@ -124,9 +134,8 @@
             margin-bottom: 30px;
         }
 
-        /* Estilo específico para a zona de upload */
         .pfp-upload-zone {
-            background-color: #ff69b4; /* Rosa para diferenciar */
+            background-color: #ff69b4; 
             padding: 15px;
             border: 5px groove blue;
             margin-bottom: 30px;
@@ -141,10 +150,9 @@
             border: 4px solid black;
             background-color: white;
             overflow: hidden; 
-            user-select: none; /* Evita selecionar a imagem ao arrastar */
+            user-select: none;
         }
 
-        /* Camadas PFP Padrão */
         .pfp-images-layer {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1; pointer-events: none;
@@ -156,27 +164,23 @@
         #base-body { z-index: 2; }
         #active-head { z-index: 3; }
 
-        /* Camadas PFP Upload */
         #custom-base-body {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             object-fit: contain;
             z-index: 1;
             pointer-events: none;
         }
-        /* A cabeça do usuário que será arrastada */
+        
         #draggable-head {
             position: absolute;
             top: 20%; left: 20%;
-            width: 150px; /* Tamanho inicial */
+            width: 150px; 
             z-index: 10;
             cursor: move;
-            border: 2px dashed rgba(0,0,0,0.3); /* Borda para saber que é selecionável */
+            border: 2px dashed rgba(0,0,0,0.3);
         }
-        #draggable-head:active {
-            border-color: red;
-        }
+        #draggable-head:active { border-color: red; }
 
-        /* Canvas de desenho */
         #signature-canvas {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             z-index: 20; 
@@ -203,21 +207,24 @@
 
         .ugly-btn {
             font-family: var(--comic-sans); padding: 8px 15px;
-            border: 3px outset black; font-weight: bold; cursor: pointer; font-size: 1em;
+            border: 3px solid black; font-weight: bold; cursor: pointer; font-size: 1em;
+            box-shadow: 3px 3px 0px black;
         }
+        .ugly-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px black; }
         #erase-btn { background-color: pink; color: red; }
-        #save-btn, #save-upload-btn { background-color: gold; color: blue; animation: pulse 2s infinite; }
+        #save-btn, #save-upload-btn { background-color: gold; color: blue; }
 
-        /* Controles específicos do Upload */
         .upload-controls {
             margin: 10px 0;
             padding: 10px;
             border: 2px dashed white;
+            background: rgba(0,0,0,0.1);
         }
         input[type=file] {
             font-family: var(--comic-sans);
             background: yellow;
             padding: 5px;
+            width: 90%;
         }
         input[type=range] {
             width: 80%;
@@ -230,22 +237,18 @@
 
         .mega-button {
             width: 90%; max-width: 500px; padding: 15px 20px;
-            font-size: 1.5em; font-family: var(--comic-sans); border: 8px outset;
+            font-size: 1.5em; font-family: var(--comic-sans); border: 5px solid black;
             cursor: pointer; text-decoration: none; display: inline-block;
             font-weight: bold; text-transform: uppercase; box-sizing: border-box; word-wrap: break-word;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.5);
         }
+        .mega-button:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0px rgba(0,0,0,0.5); }
 
-        .buy-btn { background-color: red; color: yellow; border-color: orange; animation: pulse 1s infinite; }
-        .twitter-btn { background-color: #1DA1F2; color: white; border-color: blue; }
-
-        @keyframes pulse {
-             0% { transform: scale(1); }
-             50% { transform: scale(1.02); box-shadow: 0 0 20px red;}
-             100% { transform: scale(1); }
-        }
+        .buy-btn { background-color: red; color: yellow; }
+        .twitter-btn { background-color: #1DA1F2; color: white; }
 
         footer {
-            margin-top: 30px; font-size: 0.7em; color: red; background-color: black; padding: 10px;
+            margin-top: 30px; font-size: 0.8em; color: red; background-color: black; padding: 10px;
         }
         #visitor-count {
             font-family: 'Courier New', Courier, monospace;
@@ -256,7 +259,7 @@
             marquee { font-size: 1em; }
             h1 { font-size: 1.8em; }
             h2 { font-size: 1.2em; }
-            .mega-button { font-size: 1.2em; padding: 10px; border-width: 5px; }
+            .mega-button { font-size: 1.2em; padding: 10px; border-width: 4px; }
             .container { width: 98%; margin: 10px auto; }
         }
 
@@ -278,7 +281,7 @@
 
     <div class="container">
         <header>
-            <img src="logo.png" alt="Our Glorious Leader" style="border: 4px dotted red; transform: rotate(3deg); margin-bottom: 10px;">
+            <img src="logo.png" alt="Our Glorious Leader" style="border: 4px solid black; transform: rotate(3deg); margin-bottom: 10px;">
             <h1>THE SACRED TEMPLE OF $TERY</h1>
             <h2>CULT OF PROFITABLE IGNORANCE</h2>
         </header>
@@ -328,11 +331,11 @@
 
         <section class="pfp-upload-zone">
             <h3>OPTION 2: UPLOAD UR OWN HEAD</h3>
-            <p style="font-size:0.9em;">(Use a PNG with NO background for max profit)</p>
+            <p style="font-size:0.9em; font-weight: bold;">(Use a PNG with NO background)</p>
             
             <div class="upload-controls">
                 <input type="file" id="head-upload" accept="image/png, image/jpeg"><br>
-                <label>Head Size:</label><br>
+                <label><b>Head Size:</b></label><br>
                 <input type="range" id="head-size" min="50" max="300" value="150">
             </div>
 
@@ -354,11 +357,11 @@
 
         <div class="button-zone">
             <a href="https://nad-fun.gitbook.io/nad.fun" target="_blank" class="mega-button buy-btn">
-                BUY $TERY (nad.fun)
+                💰 BUY $TERY (nad.fun) 💰
             </a>
             
             <a href="https://twitter.com" target="_blank" class="mega-button twitter-btn">
-                JOIN X CULT
+                🐦 JOIN BIRD CULT 🐦
             </a>
         </div>
 
