@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MONASTERY OF $TERY - NO BRAIN ONLY GAIN</title>
     <link rel="icon" type="image/png" href="logo.png">
 
@@ -23,6 +23,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            /* Padrão de fundo horrível */
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM32 63c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm57-13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238000ff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewport="0 0 100 100" style="fill:black;font-size:24px;"><text y="50%">💩</text></svg>'), auto;
         }
@@ -30,6 +31,7 @@
         h1, h2, h3 {
             text-shadow: 3px 3px 0px var(--eye-bleed-yellow), -3px -3px 0px red;
             letter-spacing: -2px;
+            word-wrap: break-word; /* Para não quebrar em celulares */
         }
 
         /* TELA DE CARREGAMENTO LOW IQ */
@@ -49,10 +51,10 @@
         }
 
         .spinner-stupid {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background-color: blue;
-            border: 10px dashed yellow;
+            border: 8px dashed yellow;
             animation: spin-badly 1s infinite linear;
         }
 
@@ -62,13 +64,15 @@
             100% { transform: rotate(360deg) skewX(0deg); }
         }
 
-        /* CONTEÚDO PRINCIPAL */
+        /* CONTEÚDO PRINCIPAL RESPONSIVO */
         .container {
+            width: 90%;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 20px auto;
+            padding: 15px;
             border: 5px dotted var(--pain-purple);
             background-color: rgba(255, 255, 255, 0.5);
+            box-sizing: border-box;
         }
 
         .marquee-container {
@@ -77,39 +81,38 @@
             padding: 5px;
         }
         marquee {
-            font-size: 2em;
+            font-size: 1.5em;
             font-weight: bold;
             color: red;
+        }
+
+        header img {
+            max-width: 80%;
+            height: auto;
         }
 
         /* ÁREA DO VÍDEO SAGRADO */
         .holy-video-shrine {
             margin: 30px 0;
-            border: 10px ridge gold;
+            border: 8px ridge gold;
             padding: 10px;
-            background: repeating-linear-gradient(
-              45deg,
-              #8000ff,
-              #8000ff 10px,
-              #00ff00 10px,
-              #00ff00 20px
-            );
+            background: repeating-linear-gradient(45deg, #8000ff, #8000ff 10px, #00ff00 10px, #00ff00 20px);
             animation: vibrate 0.5s infinite;
         }
 
         video {
             width: 100%;
-            max-width: 500px;
-            border: 5px solid red;
-            box-shadow: 0 0 20px var(--eye-bleed-yellow);
+            height: auto;
+            border: 4px solid red;
+            box-shadow: 0 0 15px var(--eye-bleed-yellow);
         }
 
         @keyframes vibrate {
             0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
+            20% { transform: translate(-1px, 1px); }
+            40% { transform: translate(-1px, -1px); }
+            60% { transform: translate(1px, 1px); }
+            80% { transform: translate(1px, -1px); }
             100% { transform: translate(0); }
         }
 
@@ -117,154 +120,167 @@
         .manifesto {
             background-color: var(--pain-purple);
             color: var(--eye-bleed-yellow);
-            padding: 20px;
-            border: 5px dashed black;
-            font-size: 1.2em;
-            transform: rotate(-2deg);
-            margin: 30px 0;
+            padding: 15px;
+            border: 4px dashed black;
+            font-size: 1.1em;
+            transform: rotate(-1deg);
+            margin: 25px 0;
         }
+        .manifesto ul { text-align: left; display: inline-block; }
+        .manifesto li { margin-bottom: 5px; }
 
         .blink {
-            animation: blinker 1s linear infinite;
+            animation: blinker 0.5s linear infinite;
             color: red;
             font-weight: bold;
         }
         @keyframes blinker { 50% { opacity: 0; } }
 
-        /* PFP MAKER ESTÚPIDO ATUALIZADO */
+        /* =========================================
+           PFP MAKER RESPONSIVO E TOTALMENTE ESTÚPIDO
+        ========================================= */
         .pfp-maker-zone {
             background-color: cyan;
-            padding: 20px;
+            padding: 15px;
             border: 5px groove red;
         }
 
         .pfp-canvas-container {
             position: relative;
-            width: 300px;
-            height: 300px;
+            /* Responsividade mágica: */
+            width: 100%;
+            max-width: 400px; /* Tamanho máximo no desktop */
+            aspect-ratio: 1 / 1; /* Mantém sempre quadrado */
             margin: 0 auto;
-            border: 3px solid black;
+            border: 4px solid black;
             background-color: white;
+            overflow: hidden; /* Garante que nada saia do quadrado */
         }
 
-        /* Onde as imagens ficam */
+        /* Onde as imagens (corpo/cabeça) ficam */
         .pfp-images-layer {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
-            pointer-events: none; /* Deixa o mouse passar para o canvas de desenho */
+            pointer-events: none; /* Deixa o toque passar para o canvas de desenho */
         }
 
-        #base-body {
+        #base-body, #active-head {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: 2;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: contain;
         }
+        #base-body { z-index: 2; }
+        #active-head { z-index: 3; }
 
-        #active-head {
-            position: absolute;
-            top: 20px; 
-            left: 50px; 
-            width: 200px;
-            z-index: 3;
-        }
-
-        /* O Canvas de Assinatura */
+        /* O Canvas de Desenho (Monad Purple Layer) */
         #signature-canvas {
             position: absolute;
-            bottom: 5px;
-            right: 5px;
-            border: 2px dashed red;
+            top: 0; left: 0; width: 100%; height: 100%; /* Cobre tudo agora */
             z-index: 10; /* Fica por cima de tudo */
             cursor: crosshair;
-            background-color: transparent; /* Transparente para ver o desenho embaixo */
+            background-color: transparent;
+            touch-action: none; /* Impede rolagem da tela ao desenhar no celular */
         }
 
+        /* Seletor de Cabeças */
         .head-selector {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: 15px;
             flex-wrap: wrap;
-            max-height: 200px;
-            overflow-y: auto; /* Barra de rolagem se tiver muitas cabeças */
+            max-height: 150px;
+            overflow-y: auto;
             border: 2px inset gray;
             padding: 5px;
+            background: rgba(255,255,0,0.3);
         }
 
         .head-thumb {
-            width: 60px;
-            height: 60px;
-            border: 3px solid blue;
+            width: 50px; height: 50px;
+            border: 2px solid blue;
             cursor: pointer;
             background-color: var(--eye-bleed-yellow);
             object-fit: contain;
         }
-        .head-thumb:hover {
-            border-color: red;
-            transform: scale(1.2);
+        .head-thumb:hover { border-color: red; transform: scale(1.1); }
+
+        /* Controles do PFP (Botões feios) */
+        .pfp-controls {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* BOTÕES */
+        .ugly-btn {
+            font-family: var(--comic-sans);
+            padding: 8px 15px;
+            border: 3px outset black;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        #erase-btn { background-color: pink; color: red; }
+        #save-btn { background-color: gold; color: blue; animation: pulse 2s infinite; }
+
+        /* BOTÕES PRINCIPAIS */
         .button-zone {
-            margin-top: 40px;
+            margin-top: 30px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
+            width: 100%;
         }
 
         .mega-button {
-            padding: 20px 40px;
-            font-size: 2em;
+            width: 90%; /* Ocupa largura em mobile */
+            max-width: 500px;
+            padding: 15px 20px;
+            font-size: 1.5em;
             font-family: var(--comic-sans);
-            border: 10px outset;
+            border: 8px outset;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             font-weight: bold;
             text-transform: uppercase;
+            box-sizing: border-box;
+            word-wrap: break-word;
         }
 
-        .buy-btn {
-            background-color: red;
-            color: yellow;
-            border-color: orange;
-            animation: pulse 1s infinite;
-        }
-
-        .twitter-btn {
-            background-color: #1DA1F2;
-            color: white;
-            border-color: blue;
-        }
+        .buy-btn { background-color: red; color: yellow; border-color: orange; animation: pulse 1s infinite; }
+        .twitter-btn { background-color: #1DA1F2; color: white; border-color: blue; }
 
         @keyframes pulse {
              0% { transform: scale(1); }
-             50% { transform: scale(1.1); box-shadow: 0 0 30px red;}
+             50% { transform: scale(1.02); box-shadow: 0 0 20px red;}
              100% { transform: scale(1); }
         }
 
         /* RODAPÉ */
         footer {
-            margin-top: 50px;
-            font-size: 0.8em;
+            margin-top: 30px;
+            font-size: 0.7em;
             color: red;
             background-color: black;
             padding: 10px;
         }
         #visitor-count {
             font-family: 'Courier New', Courier, monospace;
-            background: white;
-            border: 2px inset gray;
-            padding: 2px 5px;
-            color: black;
+            background: white; border: 2px inset gray; padding: 2px 5px; color: black;
+        }
+
+        /* Ajustes finos para mobile */
+        @media (max-width: 600px) {
+            marquee { font-size: 1em; }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.2em; }
+            .mega-button { font-size: 1.2em; padding: 10px; border-width: 5px; }
+            .container { width: 98%; margin: 10px auto; }
         }
 
     </style>
@@ -278,97 +294,86 @@
     </div>
 
     <div class="marquee-container">
-        <marquee scrollamount="15" direction="left">
-            WELCOME TO THE MONASTERY OF $TERY +++ WHERE SMART PPL GO TO DIE +++ WE MAKE MONEY BY ACCIDENT +++ PRAISE THE LOW IQ ABBOT +++ BUY NOW THINK NEVER
+        <marquee scrollamount="12" direction="left">
+            WELCOME TO THE MONASTERY OF $TERY +++ WHERE SMART PPL GO TO DIE +++ WE MAKE MONEY BY ACCIDENT +++ BUY NOW THINK NEVER +++ MOBILE FRIENDLY (UNFORTUNATELY)
         </marquee>
     </div>
 
     <div class="container">
         <header>
-            <img src="logo.png" alt="Our Glorious Leader" width="150" style="border: 5px dotted red; transform: rotate(5deg);">
+            <img src="logo.png" alt="Our Glorious Leader" style="border: 4px dotted red; transform: rotate(3deg); margin-bottom: 10px;">
             <h1>THE SACRED TEMPLE OF $TERY</h1>
             <h2>CULT OF PROFITABLE IGNORANCE</h2>
         </header>
 
-        <hr style="border: 5px dashed blue;">
+        <hr style="border: 4px dashed blue;">
 
         <section class="holy-video-shrine">
             <h3>WITNESS THE MIRACLE OF GAINZ</h3>
-            <p>Look at him go! He has no idea what he is doing!</p>
+            <p>He has no idea what he is doing!</p>
             <video autoplay loop muted playsinline>
                 <source src="1.mp4" type="video/mp4">
-                Your browser is too smart for this video.
+                Phone too smart for video? Sad.
             </video>
-            <p class="blink">⚠️ WARNING: WATCHING MAY LOWER IQ ⚠️</p>
+            <p class="blink" style="font-size: 0.8em;">⚠️ WARNING: WATCHING MAY LOWER IQ ⚠️</p>
         </section>
 
         <section class="manifesto">
             <h3>OUR HOLY DOCTRINE:</h3>
             <ul>
-                <li>WE DON'T READ WHITE PAPERS. WE EAT THEM.</li>
+                <li>WE EAT WHITE PAPERS.</li>
                 <li>THINKING IS FUD.</li>
-                <li>IF U DON'T UNDERSTAND IT, BUY IT.</li>
-                <li>SMOOTH BRAIN = LESS FRICTION FOR MONEY TO SLIDE IN.</li>
+                <li>SMOOTH BRAIN = LESS FRICTION.</li>
+                <li>MONAD? YES. DURR.</li>
             </ul>
-            <p>The Grand Abbot says: "Durrrrrrrrrrr... Monad? Yes."</p>
         </section>
 
         <section class="pfp-maker-zone">
             <h3>CREATE UR DUMB PFP</h3>
-            <p>1. Click head. 2. Sign ur name in the red box (use mouse, very paint style).</p>
+            <p>1. Tap head. 2. Draw with Monad Purple crayon everywhere.</p>
             
-            <div class="pfp-canvas-container">
+            <div class="pfp-canvas-container" id="pfpContainer">
                 <div class="pfp-images-layer">
-                    <img id="active-head" src="2.png" alt="Head">
-                    <img id="base-body" src="1.png" alt="Body">
+                    <img id="base-body" src="1.png" alt="Body" crossOrigin="anonymous">
+                    <img id="active-head" src="2.png" alt="Head" crossOrigin="anonymous">
                 </div>
-                <canvas id="signature-canvas" width="100" height="50"></canvas>
+                <canvas id="signature-canvas"></canvas>
             </div>
 
             <div class="head-selector" id="headSelectorContainer">
                 </div>
+
+            <div class="pfp-controls">
+                <button id="erase-btn" class="ugly-btn">🧽 ERASE SCRIBBLES</button>
+                <button id="save-btn" class="ugly-btn">💾 SAVE MASTERPIECE</button>
+            </div>
             
-            <br>
-            <p style="font-size: 0.8em;">(To save: Windows key + Shift + S. We too low IQ to make download button work with canvas.)</p>
         </section>
 
         <div class="button-zone">
             <a href="https://nad-fun.gitbook.io/nad.fun" target="_blank" class="mega-button buy-btn">
-                💰 BUY $TERY NOW (nad.fun) 💰<br>
-                <small>don't think just click</small>
+                💰 BUY $TERY (nad.fun) 💰
             </a>
             
             <a href="https://twitter.com" target="_blank" class="mega-button twitter-btn">
-                🐦 JOIN THE BIRD CULT 🐦
+                🐦 JOIN BIRD CULT 🐦
             </a>
         </div>
 
     </div>
 
     <footer>
-        <p>COPYRIGHT 1995-2025 MONASTERY OF TERY. ALL RIGHTS RESERVED (WE THINK).</p>
-        <p>YOU ARE VISITOR NUMBER: <span id="visitor-count">00001</span> (wow famous)</p>
-        <img src="logo.png" width="30" style="filter: grayscale(100%);">
+        <p>COPYRIGHT 1995-2025 MONASTERY OF TERY. NO RIGHTS RESERVED.</p>
+        <p>VISITOR: <span id="visitor-count">00001</span> (wow)</p>
+        <img src="logo.png" width="20" style="filter: grayscale(100%);">
     </footer>
 
     <script>
         // =========================================
-        // CONFIGURAÇÃO DAS CABEÇAS INFINITAS
+        // CONFIGURAÇÃO DAS CABEÇAS
         // =========================================
-        // ADICIONE SUAS NOVAS IMAGENS NESSA LISTA AQUI EMBAIXO.
-        // Exemplo: para adicionar a imagem 7.png e 8.png, a lista ficaria:
-        // const availableHeads = ['2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'];
-        
-        const availableHeads = [
-            '2.png', 
-            '3.png', 
-            '4.png', 
-            '5.png', 
-            '6.png'
-            // ADICIONE MAIS AQUI... '7.png', '8.png', etc.
-        ];
+        const availableHeads = ['2.png', '3.png', '4.png', '5.png', '6.png']; // Adicione mais aqui
 
-        // Função que gera os botões das cabeças dinamicamente
         const selectorContainer = document.getElementById('headSelectorContainer');
         availableHeads.forEach(headFilename => {
             let img = document.createElement('img');
@@ -382,27 +387,59 @@
 
 
         // =========================================
-        // SCRIPT DO CANVAS DE ASSINATURA (ESTILO PAINT)
+        // SCRIPT DO CANVAS DE DESENHO (MONAD PURPLE & RESPONSIVO)
         // =========================================
         const canvas = document.getElementById('signature-canvas');
         const ctx = canvas.getContext('2d');
+        const pfpContainer = document.getElementById('pfpContainer');
+
         let isDrawing = false;
         let lastX = 0;
         let lastY = 0;
 
-        // Estilo da "caneta" do Paint
-        ctx.lineWidth = 4; // Grosso e tosco
+        // Configuração do Pincel Monad
+        ctx.lineWidth = 5; 
         ctx.lineCap = 'round';
-        ctx.strokeStyle = '#ff0000'; // Vermelho sangue tosco
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = '#8000ff'; // COR ROXA DA MONAD!
+
+        // --- FUNÇÃO CRÍTICA PARA RESPONSIVIDADE ---
+        // Ajusta a resolução interna do canvas para bater com o tamanho visual na tela
+        function resizeCanvas() {
+            // Pega o tamanho atual do quadrado na tela
+            const rect = pfpContainer.getBoundingClientRect();
+            // Define a resolução interna do canvas para esse tamanho
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            // Reaplica o estilo do pincel pq resetou ao mudar o tamanho
+            ctx.lineWidth = 5;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = '#8000ff';
+        }
+        // Roda no início e sempre que a janela muda de tamanho
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas(); // Chama uma vez para iniciar
+
+
+        // --- Lógica de Desenho (Mouse e Touch para celular) ---
+        function getCoords(e) {
+             const rect = canvas.getBoundingClientRect();
+             let clientX, clientY;
+             if (e.touches && e.touches.length > 0) {
+                 clientX = e.touches[0].clientX;
+                 clientY = e.touches[0].clientY;
+             } else {
+                 clientX = e.clientX;
+                 clientY = e.clientY;
+             }
+             return [clientX - rect.left, clientY - rect.top];
+        }
 
         function draw(e) {
-            if (!isDrawing) return; // stop the fn from running when they are not moused down
-            
-            // Get mouse position relative to canvas
-            const rect = canvas.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
+            if (!isDrawing) return;
+            e.preventDefault(); // Impede scroll no celular
+            const [x, y] = getCoords(e);
             ctx.beginPath();
             ctx.moveTo(lastX, lastY);
             ctx.lineTo(x, y);
@@ -410,37 +447,89 @@
             [lastX, lastY] = [x, y];
         }
 
-        canvas.addEventListener('mousedown', (e) => {
+        function startDrawing(e) {
             isDrawing = true;
-            const rect = canvas.getBoundingClientRect();
-            [lastX, lastY] = [e.clientX - rect.left, e.clientY - rect.top];
-        });
+            e.preventDefault();
+            [lastX, lastY] = getCoords(e);
+        }
+
+        // Event Listeners para Mouse
+        canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mousemove', draw);
         canvas.addEventListener('mouseup', () => isDrawing = false);
         canvas.addEventListener('mouseout', () => isDrawing = false);
+        // Event Listeners para Touch (Celular)
+        canvas.addEventListener('touchstart', startDrawing, { passive: false });
+        canvas.addEventListener('touchmove', draw, { passive: false });
+        canvas.addEventListener('touchend', () => isDrawing = false);
+
+
+        // --- Botão Borracha ---
+        document.getElementById('erase-btn').addEventListener('click', () => {
+            // Limpa o canvas inteiro
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+
+        // --- Botão Salvar (O Gênio Low IQ) ---
+        document.getElementById('save-btn').addEventListener('click', function() {
+            // 1. Cria um canvas temporário na memória
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            // Define um tamanho fixo de boa qualidade para o download (ex: 500x500)
+            const downloadSize = 500;
+            tempCanvas.width = downloadSize;
+            tempCanvas.height = downloadSize;
+
+            // Pega as imagens
+            const bodyImg = document.getElementById('base-body');
+            const headImg = document.getElementById('active-head');
+
+            // 2. Desenha as camadas na ordem
+            // Desenha o corpo
+            tempCtx.drawImage(bodyImg, 0, 0, downloadSize, downloadSize);
+            // Desenha a cabeça
+            tempCtx.drawImage(headImg, 0, 0, downloadSize, downloadSize);
+            // Desenha os rabiscos (redimensionando o canvas de desenho atual para o tamanho de download)
+            tempCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, downloadSize, downloadSize);
+
+            // 3. Gera o link de download
+            try {
+                const dataUrl = tempCanvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.download = 'monastery-pfp-low-iq.png';
+                link.href = dataUrl;
+                link.click();
+            } catch (err) {
+                alert("Save failed. Ur browser is too smart/secure. Try taking a screenshot, nerd. (CORS error likely)");
+                console.error("Save error:", err);
+            }
+        });
 
 
         // =========================================
-        // SCRIPTS GERAIS (LOADING E CONTADOR)
+        // SCRIPTS GERAIS
         // =========================================
         let loadText = document.getElementById('load-text');
         let percentage = 0;
         let loadInterval = setInterval(() => {
-            percentage += Math.floor(Math.random() * 15);
-            if (percentage > 140) percentage = 2; 
+            percentage += Math.floor(Math.random() * 20);
+            if (percentage > 120) percentage = 99; 
             loadText.innerText = percentage + "% brain used...";
         }, 200);
 
         setTimeout(() => {
             clearInterval(loadInterval);
             document.getElementById('loading-screen').style.display = 'none';
-        }, 3500); 
+            resizeCanvas(); // Garante que o canvas tá certo depois do loading
+        }, 2500); 
 
         let count = 1284;
         setInterval(() => {
-            count += Math.floor(Math.random() * 10);
+            count += Math.floor(Math.random() * 5);
             document.getElementById('visitor-count').innerText = count.toString().padStart(5, '0');
-        }, 1000);
+        }, 1500);
 
     </script>
 
