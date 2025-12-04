@@ -23,7 +23,6 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            /* Padrão de fundo horrível */
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM32 63c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm57-13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238000ff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewport="0 0 100 100" style="fill:black;font-size:24px;"><text y="50%">💩</text></svg>'), auto;
         }
@@ -31,28 +30,20 @@
         h1, h2, h3 {
             text-shadow: 3px 3px 0px var(--eye-bleed-yellow), -3px -3px 0px red;
             letter-spacing: -2px;
-            word-wrap: break-word; /* Para não quebrar em celulares */
+            word-wrap: break-word;
         }
 
-        /* TELA DE CARREGAMENTO LOW IQ */
         #loading-screen {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-color: red;
             z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
             color: yellow;
         }
 
         .spinner-stupid {
-            width: 80px;
-            height: 80px;
+            width: 80px; height: 80px;
             background-color: blue;
             border: 8px dashed yellow;
             animation: spin-badly 1s infinite linear;
@@ -64,12 +55,9 @@
             100% { transform: rotate(360deg) skewX(0deg); }
         }
 
-        /* CONTEÚDO PRINCIPAL RESPONSIVO */
         .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 15px;
+            width: 90%; max-width: 800px;
+            margin: 20px auto; padding: 15px;
             border: 5px dotted var(--pain-purple);
             background-color: rgba(255, 255, 255, 0.5);
             box-sizing: border-box;
@@ -80,18 +68,10 @@
             border-bottom: 5px solid red;
             padding: 5px;
         }
-        marquee {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: red;
-        }
+        marquee { font-size: 1.5em; font-weight: bold; color: red; }
 
-        header img {
-            max-width: 80%;
-            height: auto;
-        }
+        header img { max-width: 80%; height: auto; }
 
-        /* ÁREA DO VÍDEO SAGRADO */
         .holy-video-shrine {
             margin: 30px 0;
             border: 8px ridge gold;
@@ -101,8 +81,7 @@
         }
 
         video {
-            width: 100%;
-            height: auto;
+            width: 100%; height: auto;
             border: 4px solid red;
             box-shadow: 0 0 15px var(--eye-bleed-yellow);
         }
@@ -116,7 +95,6 @@
             100% { transform: translate(0); }
         }
 
-        /* MANIFESTO DO CULTO */
         .manifesto {
             background-color: var(--pain-purple);
             color: var(--eye-bleed-yellow);
@@ -137,119 +115,124 @@
         @keyframes blinker { 50% { opacity: 0; } }
 
         /* =========================================
-           PFP MAKER RESPONSIVO E TOTALMENTE ESTÚPIDO
+           PFP MAKERS (STANDARD & UPLOAD)
         ========================================= */
         .pfp-maker-zone {
             background-color: cyan;
             padding: 15px;
             border: 5px groove red;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo específico para a zona de upload */
+        .pfp-upload-zone {
+            background-color: #ff69b4; /* Rosa para diferenciar */
+            padding: 15px;
+            border: 5px groove blue;
+            margin-bottom: 30px;
         }
 
         .pfp-canvas-container {
             position: relative;
-            /* Responsividade mágica: */
             width: 100%;
-            max-width: 400px; /* Tamanho máximo no desktop */
-            aspect-ratio: 1 / 1; /* Mantém sempre quadrado */
+            max-width: 400px;
+            aspect-ratio: 1 / 1;
             margin: 0 auto;
             border: 4px solid black;
             background-color: white;
-            overflow: hidden; /* Garante que nada saia do quadrado */
+            overflow: hidden; 
+            user-select: none; /* Evita selecionar a imagem ao arrastar */
         }
 
-        /* Onde as imagens (corpo/cabeça) ficam */
+        /* Camadas PFP Padrão */
         .pfp-images-layer {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1;
-            pointer-events: none; /* Deixa o toque passar para o canvas de desenho */
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
         }
-
         #base-body, #active-head {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             object-fit: contain;
         }
         #base-body { z-index: 2; }
         #active-head { z-index: 3; }
 
-        /* O Canvas de Desenho (Monad Purple Layer) */
-        #signature-canvas {
+        /* Camadas PFP Upload */
+        #custom-base-body {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: contain;
+            z-index: 1;
+            pointer-events: none;
+        }
+        /* A cabeça do usuário que será arrastada */
+        #draggable-head {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; /* Cobre tudo agora */
-            z-index: 10; /* Fica por cima de tudo */
-            cursor: crosshair;
-            background-color: transparent;
-            touch-action: none; /* Impede rolagem da tela ao desenhar no celular */
+            top: 20%; left: 20%;
+            width: 150px; /* Tamanho inicial */
+            z-index: 10;
+            cursor: move;
+            border: 2px dashed rgba(0,0,0,0.3); /* Borda para saber que é selecionável */
+        }
+        #draggable-head:active {
+            border-color: red;
         }
 
-        /* Seletor de Cabeças */
+        /* Canvas de desenho */
+        #signature-canvas {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 20; 
+            cursor: crosshair;
+            background-color: transparent;
+            touch-action: none; 
+        }
+
         .head-selector {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-            max-height: 150px;
-            overflow-y: auto;
-            border: 2px inset gray;
-            padding: 5px;
-            background: rgba(255,255,0,0.3);
+            display: flex; justify-content: center; gap: 8px; margin-top: 15px;
+            flex-wrap: wrap; max-height: 150px; overflow-y: auto;
+            border: 2px inset gray; padding: 5px; background: rgba(255,255,0,0.3);
         }
 
         .head-thumb {
-            width: 50px; height: 50px;
-            border: 2px solid blue;
-            cursor: pointer;
-            background-color: var(--eye-bleed-yellow);
-            object-fit: contain;
+            width: 50px; height: 50px; border: 2px solid blue; cursor: pointer;
+            background-color: var(--eye-bleed-yellow); object-fit: contain;
         }
         .head-thumb:hover { border-color: red; transform: scale(1.1); }
 
-        /* Controles do PFP (Botões feios) */
         .pfp-controls {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin-top: 15px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
         }
 
         .ugly-btn {
-            font-family: var(--comic-sans);
-            padding: 8px 15px;
-            border: 3px outset black;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1em;
+            font-family: var(--comic-sans); padding: 8px 15px;
+            border: 3px outset black; font-weight: bold; cursor: pointer; font-size: 1em;
         }
         #erase-btn { background-color: pink; color: red; }
-        #save-btn { background-color: gold; color: blue; animation: pulse 2s infinite; }
+        #save-btn, #save-upload-btn { background-color: gold; color: blue; animation: pulse 2s infinite; }
 
-        /* BOTÕES PRINCIPAIS */
+        /* Controles específicos do Upload */
+        .upload-controls {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px dashed white;
+        }
+        input[type=file] {
+            font-family: var(--comic-sans);
+            background: yellow;
+            padding: 5px;
+        }
+        input[type=range] {
+            width: 80%;
+            margin-top: 10px;
+        }
+
         .button-zone {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            width: 100%;
+            margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; width: 100%;
         }
 
         .mega-button {
-            width: 90%; /* Ocupa largura em mobile */
-            max-width: 500px;
-            padding: 15px 20px;
-            font-size: 1.5em;
-            font-family: var(--comic-sans);
-            border: 8px outset;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-sizing: border-box;
-            word-wrap: break-word;
+            width: 90%; max-width: 500px; padding: 15px 20px;
+            font-size: 1.5em; font-family: var(--comic-sans); border: 8px outset;
+            cursor: pointer; text-decoration: none; display: inline-block;
+            font-weight: bold; text-transform: uppercase; box-sizing: border-box; word-wrap: break-word;
         }
 
         .buy-btn { background-color: red; color: yellow; border-color: orange; animation: pulse 1s infinite; }
@@ -261,20 +244,14 @@
              100% { transform: scale(1); }
         }
 
-        /* RODAPÉ */
         footer {
-            margin-top: 30px;
-            font-size: 0.7em;
-            color: red;
-            background-color: black;
-            padding: 10px;
+            margin-top: 30px; font-size: 0.7em; color: red; background-color: black; padding: 10px;
         }
         #visitor-count {
             font-family: 'Courier New', Courier, monospace;
             background: white; border: 2px inset gray; padding: 2px 5px; color: black;
         }
 
-        /* Ajustes finos para mobile */
         @media (max-width: 600px) {
             marquee { font-size: 1em; }
             h1 { font-size: 1.8em; }
@@ -295,7 +272,7 @@
 
     <div class="marquee-container">
         <marquee scrollamount="12" direction="left">
-            WELCOME TO THE MONASTERY OF $TERY +++ WHERE SMART PPL GO TO DIE +++ WE MAKE MONEY BY ACCIDENT +++ BUY NOW THINK NEVER +++ MOBILE FRIENDLY (UNFORTUNATELY)
+            WELCOME TO THE MONASTERY OF $TERY +++ WHERE SMART PPL GO TO DIE +++ WE MAKE MONEY BY ACCIDENT +++ BUY NOW THINK NEVER +++ UPLOAD UR UGLY FACE NOW
         </marquee>
     </div>
 
@@ -329,8 +306,8 @@
         </section>
 
         <section class="pfp-maker-zone">
-            <h3>CREATE UR DUMB PFP</h3>
-            <p>1. Tap head. 2. Draw with Monad Purple crayon everywhere.</p>
+            <h3>OPTION 1: USE OUR UGLY HEADS</h3>
+            <p>1. Tap head. 2. Draw with Monad Purple crayon.</p>
             
             <div class="pfp-canvas-container" id="pfpContainer">
                 <div class="pfp-images-layer">
@@ -345,10 +322,35 @@
 
             <div class="pfp-controls">
                 <button id="erase-btn" class="ugly-btn">🧽 ERASE SCRIBBLES</button>
-                <button id="save-btn" class="ugly-btn">💾 SAVE MASTERPIECE</button>
+                <button id="save-btn" class="ugly-btn">💾 SAVE THIS ONE</button>
             </div>
-            
         </section>
+
+        <section class="pfp-upload-zone">
+            <h3>OPTION 2: UPLOAD UR OWN HEAD</h3>
+            <p style="font-size:0.9em;">(Use a PNG with NO background for max profit)</p>
+            
+            <div class="upload-controls">
+                <input type="file" id="head-upload" accept="image/png, image/jpeg"><br>
+                <label>Head Size:</label><br>
+                <input type="range" id="head-size" min="50" max="300" value="150">
+            </div>
+
+            <div class="pfp-canvas-container" id="uploadContainer">
+                <img id="custom-base-body" src="1.png" alt="Body" crossOrigin="anonymous">
+                
+                <img id="draggable-head" src="" alt="Ur Head" style="display:none;" draggable="false">
+                
+                <p id="drag-instruction" style="position: absolute; top: 40%; width:100%; text-align:center; color: red; font-weight:bold; pointer-events: none;">
+                    UPLOAD IMG ABOVE<br>THEN DRAG TO FIT
+                </p>
+            </div>
+
+            <div class="pfp-controls">
+                <button id="save-upload-btn" class="ugly-btn">💾 SAVE MY CUSTOM MONK</button>
+            </div>
+        </section>
+
 
         <div class="button-zone">
             <a href="https://nad-fun.gitbook.io/nad.fun" target="_blank" class="mega-button buy-btn">
@@ -370,9 +372,9 @@
 
     <script>
         // =========================================
-        // CONFIGURAÇÃO DAS CABEÇAS
+        // CONFIGURAÇÃO GERAL
         // =========================================
-        const availableHeads = ['2.png', '3.png', '4.png', '5.png', '6.png']; // Adicione mais aqui
+        const availableHeads = ['2.png', '3.png', '4.png', '5.png', '6.png']; 
 
         const selectorContainer = document.getElementById('headSelectorContainer');
         availableHeads.forEach(headFilename => {
@@ -385,131 +387,207 @@
             selectorContainer.appendChild(img);
         });
 
-
         // =========================================
-        // SCRIPT DO CANVAS DE DESENHO (MONAD PURPLE & RESPONSIVO)
+        // LOGICA DO CANVAS 1 (DESENHO)
         // =========================================
         const canvas = document.getElementById('signature-canvas');
         const ctx = canvas.getContext('2d');
         const pfpContainer = document.getElementById('pfpContainer');
-
         let isDrawing = false;
-        let lastX = 0;
-        let lastY = 0;
+        let lastX = 0; let lastY = 0;
 
-        // Configuração do Pincel Monad
-        ctx.lineWidth = 5; 
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        ctx.strokeStyle = '#8000ff'; // COR ROXA DA MONAD!
+        ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#8000ff';
 
-        // --- FUNÇÃO CRÍTICA PARA RESPONSIVIDADE ---
-        // Ajusta a resolução interna do canvas para bater com o tamanho visual na tela
         function resizeCanvas() {
-            // Pega o tamanho atual do quadrado na tela
             const rect = pfpContainer.getBoundingClientRect();
-            // Define a resolução interna do canvas para esse tamanho
             canvas.width = rect.width;
             canvas.height = rect.height;
-            // Reaplica o estilo do pincel pq resetou ao mudar o tamanho
-            ctx.lineWidth = 5;
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-            ctx.strokeStyle = '#8000ff';
+            ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#8000ff';
         }
-        // Roda no início e sempre que a janela muda de tamanho
         window.addEventListener('resize', resizeCanvas);
-        resizeCanvas(); // Chama uma vez para iniciar
+        resizeCanvas();
 
-
-        // --- Lógica de Desenho (Mouse e Touch para celular) ---
         function getCoords(e) {
              const rect = canvas.getBoundingClientRect();
              let clientX, clientY;
              if (e.touches && e.touches.length > 0) {
-                 clientX = e.touches[0].clientX;
-                 clientY = e.touches[0].clientY;
+                 clientX = e.touches[0].clientX; clientY = e.touches[0].clientY;
              } else {
-                 clientX = e.clientX;
-                 clientY = e.clientY;
+                 clientX = e.clientX; clientY = e.clientY;
              }
              return [clientX - rect.left, clientY - rect.top];
         }
 
         function draw(e) {
             if (!isDrawing) return;
-            e.preventDefault(); // Impede scroll no celular
+            e.preventDefault();
             const [x, y] = getCoords(e);
-            ctx.beginPath();
-            ctx.moveTo(lastX, lastY);
-            ctx.lineTo(x, y);
-            ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(lastX, lastY); ctx.lineTo(x, y); ctx.stroke();
             [lastX, lastY] = [x, y];
         }
 
         function startDrawing(e) {
-            isDrawing = true;
-            e.preventDefault();
-            [lastX, lastY] = getCoords(e);
+            isDrawing = true; e.preventDefault(); [lastX, lastY] = getCoords(e);
         }
 
-        // Event Listeners para Mouse
         canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mousemove', draw);
         canvas.addEventListener('mouseup', () => isDrawing = false);
         canvas.addEventListener('mouseout', () => isDrawing = false);
-        // Event Listeners para Touch (Celular)
         canvas.addEventListener('touchstart', startDrawing, { passive: false });
         canvas.addEventListener('touchmove', draw, { passive: false });
         canvas.addEventListener('touchend', () => isDrawing = false);
 
-
-        // --- Botão Borracha ---
         document.getElementById('erase-btn').addEventListener('click', () => {
-            // Limpa o canvas inteiro
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
 
-
-        // --- Botão Salvar (O Gênio Low IQ) ---
+        // SALVAR OPÇÃO 1
         document.getElementById('save-btn').addEventListener('click', function() {
-            // 1. Cria um canvas temporário na memória
             const tempCanvas = document.createElement('canvas');
             const tempCtx = tempCanvas.getContext('2d');
-            
-            // Define um tamanho fixo de boa qualidade para o download (ex: 500x500)
             const downloadSize = 500;
-            tempCanvas.width = downloadSize;
-            tempCanvas.height = downloadSize;
+            tempCanvas.width = downloadSize; tempCanvas.height = downloadSize;
 
-            // Pega as imagens
             const bodyImg = document.getElementById('base-body');
             const headImg = document.getElementById('active-head');
 
-            // 2. Desenha as camadas na ordem
-            // Desenha o corpo
             tempCtx.drawImage(bodyImg, 0, 0, downloadSize, downloadSize);
-            // Desenha a cabeça
             tempCtx.drawImage(headImg, 0, 0, downloadSize, downloadSize);
-            // Desenha os rabiscos (redimensionando o canvas de desenho atual para o tamanho de download)
             tempCtx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, downloadSize, downloadSize);
 
-            // 3. Gera o link de download
             try {
                 const dataUrl = tempCanvas.toDataURL('image/png');
                 const link = document.createElement('a');
                 link.download = 'monastery-pfp-low-iq.png';
                 link.href = dataUrl;
                 link.click();
-            } catch (err) {
-                alert("Save failed. Ur browser is too smart/secure. Try taking a screenshot, nerd. (CORS error likely)");
-                console.error("Save error:", err);
-            }
+            } catch (err) { alert("Save failed. Use screenshot."); }
         });
 
 
         // =========================================
-        // SCRIPTS GERAIS
+        // LOGICA DO UPLOAD & DRAG (OPÇÃO 2)
+        // =========================================
+        const headUploadInput = document.getElementById('head-upload');
+        const draggableHead = document.getElementById('draggable-head');
+        const headSizeSlider = document.getElementById('head-size');
+        const uploadContainer = document.getElementById('uploadContainer');
+
+        // 1. Carregar imagem
+        headUploadInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    draggableHead.src = event.target.result;
+                    draggableHead.style.display = 'block';
+                    document.getElementById('drag-instruction').style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 2. Slider de Tamanho
+        headSizeSlider.addEventListener('input', function() {
+            draggableHead.style.width = this.value + 'px';
+        });
+
+        // 3. Lógica de Drag (Mouse + Touch)
+        let isDraggingHead = false;
+        let dragStartX, dragStartY;
+        let initialLeft, initialTop;
+
+        function startDragHead(e) {
+            e.preventDefault();
+            isDraggingHead = true;
+            
+            let clientX, clientY;
+            if(e.touches) { clientX = e.touches[0].clientX; clientY = e.touches[0].clientY; }
+            else { clientX = e.clientX; clientY = e.clientY; }
+
+            dragStartX = clientX;
+            dragStartY = clientY;
+            
+            // Pega posição atual
+            initialLeft = draggableHead.offsetLeft;
+            initialTop = draggableHead.offsetTop;
+        }
+
+        function doDragHead(e) {
+            if (!isDraggingHead) return;
+            e.preventDefault();
+
+            let clientX, clientY;
+            if(e.touches) { clientX = e.touches[0].clientX; clientY = e.touches[0].clientY; }
+            else { clientX = e.clientX; clientY = e.clientY; }
+
+            const deltaX = clientX - dragStartX;
+            const deltaY = clientY - dragStartY;
+
+            draggableHead.style.left = (initialLeft + deltaX) + 'px';
+            draggableHead.style.top = (initialTop + deltaY) + 'px';
+        }
+
+        function stopDragHead() {
+            isDraggingHead = false;
+        }
+
+        draggableHead.addEventListener('mousedown', startDragHead);
+        window.addEventListener('mousemove', doDragHead); // Window pra não perder o drag se sair rápido
+        window.addEventListener('mouseup', stopDragHead);
+
+        draggableHead.addEventListener('touchstart', startDragHead, {passive: false});
+        window.addEventListener('touchmove', doDragHead, {passive: false});
+        window.addEventListener('touchend', stopDragHead);
+
+
+        // 4. Salvar Opção 2 (Custom)
+        document.getElementById('save-upload-btn').addEventListener('click', function() {
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            // Usamos o tamanho real do container para calcular a proporção correta
+            const containerRect = uploadContainer.getBoundingClientRect();
+            const scaleFactor = 2; // Salvar em dobro da resolução da tela pra ficar bom
+            
+            tempCanvas.width = containerRect.width * scaleFactor;
+            tempCanvas.height = containerRect.height * scaleFactor;
+
+            const bodyImg = document.getElementById('custom-base-body');
+            
+            // Desenha Corpo
+            tempCtx.drawImage(bodyImg, 0, 0, tempCanvas.width, tempCanvas.height);
+            
+            // Desenha Cabeça Customizada na posição exata
+            if(draggableHead.style.display !== 'none') {
+                const headRect = draggableHead.getBoundingClientRect();
+                
+                // Calcula posição relativa ao container
+                const relX = headRect.left - containerRect.left;
+                const relY = headRect.top - containerRect.top;
+                
+                tempCtx.drawImage(
+                    draggableHead, 
+                    relX * scaleFactor, 
+                    relY * scaleFactor, 
+                    headRect.width * scaleFactor, 
+                    headRect.height * scaleFactor
+                );
+            }
+
+            try {
+                const dataUrl = tempCanvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.download = 'monastery-custom-pfp.png';
+                link.href = dataUrl;
+                link.click();
+            } catch (err) { alert("Save failed. Screenshot it."); }
+        });
+
+
+        // =========================================
+        // LOADING & COUNTER
         // =========================================
         let loadText = document.getElementById('load-text');
         let percentage = 0;
@@ -522,7 +600,7 @@
         setTimeout(() => {
             clearInterval(loadInterval);
             document.getElementById('loading-screen').style.display = 'none';
-            resizeCanvas(); // Garante que o canvas tá certo depois do loading
+            resizeCanvas();
         }, 2500); 
 
         let count = 1284;
